@@ -20,3 +20,7 @@
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Fch/FchAb/FchInitResetAbUt/FchInitResetAbUt.inf
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Fch/FchAb/FchAbSetInputBlkUt/FchAbSetInputBlkUt.inf
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Fch/FchAb/FchInitEnvAbUt/FchInitEnvAbUt.inf
+
+  AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Ccx/Common/CcxEnableSmeeUt/CcxEnableSmeeUt.inf
+  AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Ccx/Common/CcxSetCacWeightsUt/CcxSetCacWeightsUt.inf
+  AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Ccx/Common/CcxGetCacWeightsUt/CcxGetCacWeightsUt.inf
