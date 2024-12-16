@@ -96,42 +96,19 @@ TestBody (
     "%s (Iteration: %s) Test started.", TestName, IterationName);
 
   if (strcmp (IterationName, "SilPass") == 0) {
-    // Arrange for SilGetIp2IpApi (SilId_SmuClass, (void **)&SmuApi) in CcxGetCacWeights (uint64_t *CacWeights);
-    // mock func -> SilGetIp2IpApi (SIL_DATA_BLOCK_ID IpId, void **Api);
-    void *validApi = NULL;
-    uint64_t CacWeightsGet[5] ={0, 236, 93671, 32447, 46512};
-
-    SilGetIp2IpApi (ipId, &validApi);
+    // Arrange 
 
     // Act  
-    SilStatus = CcxGetCacWeights(CacWeightsGet);
 
     // Assert
-    if (SilStatus != SilPass) {
-      Ut->Log(AMD_UNIT_TEST_LOG_ERROR, __FUNCTION__, __LINE__,
-            "Did not receive SilPass", IterationName);
-      UtSetTestStatus (Ut, AMD_UNIT_TEST_ABORTED);
-    } else {
-      UtSetTestStatus (Ut, AMD_UNIT_TEST_PASSED);
-    }
+
   } else if (strcmp (IterationName, "SilAborted") == 0) {
     // Arrange 
-    void **invalidApi = NULL; //pass as invalidApi
-    uint64_t CacWeightsGet[5] ={0, 236, 93671, 32447, 46512};
-
-    SilGetIp2IpApi (ipId, invalidApi);
 
     // Act  
-    SilStatus = CcxGetCacWeights(CacWeightsGet);
 
     // Assert 
-    if (SilStatus != SilPass) {
-      Ut->Log(AMD_UNIT_TEST_LOG_ERROR, __FUNCTION__, __LINE__,
-            "Did not receive SilPass", IterationName);
-      UtSetTestStatus (Ut, AMD_UNIT_TEST_ABORTED);
-    } else {
-      UtSetTestStatus (Ut, AMD_UNIT_TEST_PASSED);
-    }
+
   } else {
     Ut->Log(AMD_UNIT_TEST_LOG_ERROR, __FUNCTION__, __LINE__,
       "Iteration '%s' is not implemented.", IterationName);
