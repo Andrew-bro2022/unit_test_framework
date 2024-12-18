@@ -113,15 +113,6 @@ TestCleanUp (
   IN AMD_UNIT_TEST_CONTEXT Context
   )
 {
-  // AMD_UNIT_TEST_FRAMEWORK *Ut = (AMD_UNIT_TEST_FRAMEWORK*) UtGetActiveFrameworkHandle ();
-  // const char* TestName        = UtGetTestName (Ut);
-  // const char* IterationName   = UtGetTestIteration (Ut);
-  // Ut->Log(AMD_UNIT_TEST_LOG_INFO, __FUNCTION__, __LINE__,
-  //   "%s (Iteration: %s) CleanUp started.", TestName, IterationName);
-  // // Free openSIL allocated memory
-  // UtSilDeinit ();
-  // Ut->Log(AMD_UNIT_TEST_LOG_INFO, __FUNCTION__, __LINE__,
-  //   "%s (Iteration: %s) CleanUp ended.", TestName, IterationName);
   return AMD_UNIT_TEST_PASSED;
 }
 

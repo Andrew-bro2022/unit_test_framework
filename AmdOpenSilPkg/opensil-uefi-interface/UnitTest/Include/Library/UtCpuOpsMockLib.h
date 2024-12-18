@@ -1,8 +1,8 @@
 /* Copyright (C) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved. */
 // SPDX-License-Identifier: MIT
 /**
- * @file UtxUsMockLib.h
- * @brief This header contains definitions used by UtxUsMockLib
+ * @file UtCpuOpsMockLib.h
+ * @brief This header contains definitions used by UtCpuOpsMockLib
  *
  */
 #pragma once

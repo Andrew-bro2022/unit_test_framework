@@ -19,4 +19,4 @@
 #include <CCX/Common/Ccx.h> 
 #include <Include/MsrReg.h>
 #include <Library/UtSilServicesMockLib.h>
-#include <Library/UtxUsMockLib.h>
+#include <Library/UtCpuOpsMockLib.h>

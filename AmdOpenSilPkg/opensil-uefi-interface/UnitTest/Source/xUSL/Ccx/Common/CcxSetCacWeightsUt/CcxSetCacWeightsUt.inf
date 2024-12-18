@@ -28,7 +28,7 @@
 [LibraryClasses]
   UtBaseLib
   UtSilServicesMockLib
-  UtxUsMockLib
+  UtCpuOpsMockLib
 
   UtIoFakeLib
   UtSilInitLib

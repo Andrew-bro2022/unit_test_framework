@@ -1,8 +1,8 @@
 /* Copyright (C) 2021 - 2024 Advanced Micro Devices, Inc. All rights reserved. */
 // SPDX-License-Identifier: MIT
 /**
- * @file  UtIoMockLib.c
- * @brief xUs Mock Library
+ * @file  UtCpuOpsMockLib.c
+ * @brief CPU Operation Mock Library
  *
  */
 

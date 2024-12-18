@@ -6,18 +6,42 @@
  *
  */
 
-#include <UtBaseLib.h>
-#include <UtSilInitLib.h>
-#include <UtLogLib.h>
+#include <CcxGetCacWeightsUt.h>
 
-#include <stdlib.h>     // if not included, build ok
-#include <time.h>       // if not included, build ok
-#include <stdbool.h>    // if not included, build ok
-#include <xSIM.h>       // if not included, will cause error 2059, c2061
-#include <CCX/Common/Ccx.h> //must put here, solve the error of undefine of CcxEnableSmee
-#include <Include/MsrReg.h>// if not included, build ok
+HOST_DEBUG_SERVICE mHostDebugService = NULL;
 
-// HOST_DEBUG_SERVICE mHostDebugService = NULL;
+SMU_IP2IP_API SmuApi = {
+  .Header                   =      {
+      .IpId         = SilId_SmuClass,
+      .IpVersion    = 13,
+    },  
+  .SmuServiceInitArguments  =     NULL,
+  .SmuServiceRequest        =     NULL,
+  .SmuFirmwareTest          =     NULL,
+  .DxioServiceRequest       =     NULL,
+  .SmuNotifyS3Entry         =     NULL,
+  .SmuGetGnbHandle          =     NULL,
+  .SmuReadBrandString       =     NULL,
+  .SmuLaunchThread          =     NULL,
+  .SmuReadBistInfo          =     NULL,
+  .SmuReadCacWeights        =     SmuReadCacWeightsUt,
+  .SmuRegisterRead          =     NULL,
+  .SmuRegisterWrite         =     NULL,
+  .SmuRegisterRMW           =     NULL,
+  .SmuDisableSmt            =     NULL,
+  .SmuGetOpnCorePresence    =     NULL,
+  .SmuGetOpnCorePresenceEx  =     NULL
+};
+
+SIL_STATUS 
+SmuReadCacWeightsUt (
+  uint32_t  MaxNumWeights,
+  uint64_t  *ApmWeights
+  )
+{
+  return SilPass; 
+}
+
 void
 xUslMsrAndThenOr (
   uint32_t Index,
@@ -41,6 +65,7 @@ xUslWrMsr (
   uint32_t MsrAddress, 
   uint64_t MsrValue
   )
+
 {
   return;
 }
@@ -77,6 +102,7 @@ TestPrerequisite (
   )
 {
   return AMD_UNIT_TEST_PASSED; 
+
 }
 
 void
@@ -90,25 +116,46 @@ TestBody (
   const char* IterationName   = UtGetTestIteration (Ut);
 
   SIL_STATUS           SilStatus;
-  SIL_DATA_BLOCK_ID ipId = SilId_SocCommon;
+  uint64_t CacWeightsGet[MAX_CAC_WEIGHT_NUM] = {0};
   
   Ut->Log(AMD_UNIT_TEST_LOG_INFO, __FUNCTION__, __LINE__,
     "%s (Iteration: %s) Test started.", TestName, IterationName);
 
   if (strcmp (IterationName, "SilPass") == 0) {
     // Arrange 
+    MockSilGetIp2IpApiOnce((void *)&SmuApi, SilPass);
 
     // Act  
+    SilStatus = CcxGetCacWeights(CacWeightsGet);
 
     // Assert
+    if (SilStatus != SilPass){
+      Ut->Log(AMD_UNIT_TEST_LOG_ERROR, __FUNCTION__, __LINE__,
+            "Did not receive SilPass", IterationName);
+      UtSetTestStatus (Ut, AMD_UNIT_TEST_ABORTED);
+    } else {
+      Ut->Log(AMD_UNIT_TEST_LOG_ERROR, __FUNCTION__, __LINE__,
+            "Receive SilPass", IterationName);
+      UtSetTestStatus (Ut, AMD_UNIT_TEST_PASSED);
+    }
 
   } else if (strcmp (IterationName, "SilAborted") == 0) {
     // Arrange 
+    MockSilGetIp2IpApiOnce(NULL, SilAborted);
 
     // Act  
+    SilStatus = CcxGetCacWeights(CacWeightsGet);
 
     // Assert 
-
+    if (SilStatus != SilAborted) {
+      Ut->Log(AMD_UNIT_TEST_LOG_ERROR, __FUNCTION__, __LINE__,
+            "Did not receive SilAborted", IterationName);
+      UtSetTestStatus (Ut, AMD_UNIT_TEST_ABORTED);
+    } else {
+      Ut->Log(AMD_UNIT_TEST_LOG_ERROR, __FUNCTION__, __LINE__,
+            "Receive SilAborted", IterationName);
+      UtSetTestStatus (Ut, AMD_UNIT_TEST_PASSED);
+    }
   } else {
     Ut->Log(AMD_UNIT_TEST_LOG_ERROR, __FUNCTION__, __LINE__,
       "Iteration '%s' is not implemented.", IterationName);
@@ -126,15 +173,6 @@ TestCleanUp (
   IN AMD_UNIT_TEST_CONTEXT Context
   )
 {
-  // AMD_UNIT_TEST_FRAMEWORK *Ut = (AMD_UNIT_TEST_FRAMEWORK*) UtGetActiveFrameworkHandle ();
-  // const char* TestName        = UtGetTestName (Ut);
-  // const char* IterationName   = UtGetTestIteration (Ut);
-  // Ut->Log(AMD_UNIT_TEST_LOG_INFO, __FUNCTION__, __LINE__,
-  //   "%s (Iteration: %s) CleanUp started.", TestName, IterationName);
-  // // Free openSIL allocated memory
-  // UtSilDeinit ();
-  // Ut->Log(AMD_UNIT_TEST_LOG_INFO, __FUNCTION__, __LINE__,
-  //   "%s (Iteration: %s) CleanUp ended.", TestName, IterationName);
   return AMD_UNIT_TEST_PASSED;
 }
 

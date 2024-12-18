@@ -5,13 +5,17 @@
 # @brief
 #
 
-
 [Defines]
   INF_VERSION    = 0x00010005
   BASE_NAME      = CcxGetCacWeightsUt
   FILE_GUID      = e643a68d-e6fe-4d46-9ab4-1b97c32e64f2
   MODULE_TYPE    = HOST_APPLICATION
   VERSION_STRING = 1.0
+
+[BuildOptions]
+# Set the compiler to include the platform openSIL config file
+  MSFT:*_*_*_CC_FLAGS     =  /FI openSIL/configs/Onyx_SilCfg.h /Dstatic=
+  GCC:*_*_*_CC_FLAGS      =  -include openSIL/configs/Onyx_SilCfg.h -Dstatic=
 
 [Sources]
   CcxGetCacWeightsUt.c
@@ -28,8 +32,8 @@
 [LibraryClasses]
   UtBaseLib
   UtSilServicesMockLib
-  
-
+  UtCpuOpsMockLib
   UtIoFakeLib
   UtSilInitLib
   UtMmioFakeLib
+  UtPciStubLib
