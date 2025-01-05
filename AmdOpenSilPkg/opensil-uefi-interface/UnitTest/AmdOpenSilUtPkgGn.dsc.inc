@@ -24,3 +24,6 @@
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Ccx/Common/CcxEnableSmeeUt/CcxEnableSmeeUt.inf
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Ccx/Common/CcxSetCacWeightsUt/CcxSetCacWeightsUt.inf
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Ccx/Common/CcxGetCacWeightsUt/CcxGetCacWeightsUt.inf
+
+  AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Df/Common/DfGetProcessorInfoUt/DfGetProcessorInfoUt.inf
+  AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Df/Common/DfGetDieInfoUt/DfGetDieInfoUt.inf

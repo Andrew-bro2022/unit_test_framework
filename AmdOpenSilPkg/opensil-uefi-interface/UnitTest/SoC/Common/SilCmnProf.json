@@ -113,6 +113,22 @@
   {
     "Component": "DF",
     "Description": "Profile for xUSL DF components",
-    "Tests" : []
+    "Tests" : [
+      {
+        "Name"       : "DfGetProcessorInfoUt",
+        "ConfigFile" : "AmdOpenSilPkg\\opensil-uefi-interface\\UnitTest\\Source\\xUSL\\Df\\Common\\DfGetProcessorInfoUt\\DfGetProcessorInfoUt.json",
+        "Iterations" : ["ValidateProcessorInfo", "InvalidSocketIndexParameter"],
+        "Target"     : "AmdOpenSilPkg\\opensil-uefi-interface\\OpenSIL\\xUSL\\DF\\Common\\BaseFabricTopologyCmn.c",    
+        "Timeout"    : 15
+      },
+      {
+        "Name"       : "DfGetDieInfoUt",
+        "ConfigFile" : "AmdOpenSilPkg\\opensil-uefi-interface\\UnitTest\\Source\\xUSL\\Df\\Common\\DfGetDieInfoUt\\DfGetDieInfoUt.json",
+        "Iterations" : ["ValidateDieInfo", "InvalidSocketParameter", "InvalidDieParameter"],
+        "Target"     : "AmdOpenSilPkg\\opensil-uefi-interface\\OpenSIL\\xUSL\\DF\\Common\\BaseFabricTopologyCmn.c",    
+        "Timeout"    : 15
+      }
+    ]
   }
 ]
+
