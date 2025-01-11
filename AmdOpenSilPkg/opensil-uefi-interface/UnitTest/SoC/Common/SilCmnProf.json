@@ -127,6 +127,13 @@
         "Iterations" : ["ValidateDieInfo", "InvalidSocketParameter", "InvalidDieParameter"],
         "Target"     : "AmdOpenSilPkg\\opensil-uefi-interface\\OpenSIL\\xUSL\\DF\\Common\\BaseFabricTopologyCmn.c",    
         "Timeout"    : 15
+      },
+      {
+        "Name"       : "DfGetSystemInfoUt",
+        "ConfigFile" : "AmdOpenSilPkg\\opensil-uefi-interface\\UnitTest\\Source\\xUSL\\Df\\Common\\DfGetSystemInfoUt\\DfGetSystemInfoUt.json",
+        "Iterations" : ["SilPass"],
+        "Target"     : "AmdOpenSilPkg\\opensil-uefi-interface\\OpenSIL\\xUSL\\DF\\Common\\BaseFabricTopologyCmn.c",    
+        "Timeout"    : 15
       }
     ]
   }

@@ -27,3 +27,4 @@
 
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Df/Common/DfGetProcessorInfoUt/DfGetProcessorInfoUt.inf
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Df/Common/DfGetDieInfoUt/DfGetDieInfoUt.inf
+  AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Df/Common/DfGetSystemInfoUt/DfGetSystemInfoUt.inf
