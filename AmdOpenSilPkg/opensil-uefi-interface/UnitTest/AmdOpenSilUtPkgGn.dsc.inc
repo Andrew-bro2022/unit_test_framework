@@ -28,3 +28,7 @@
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Df/Common/DfGetProcessorInfoUt/DfGetProcessorInfoUt.inf
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Df/Common/DfGetDieInfoUt/DfGetDieInfoUt.inf
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/Df/Common/DfGetSystemInfoUt/DfGetSystemInfoUt.inf
+
+  AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/NBIO/IOD/FindPcieCoreDescUt/FindPcieCoreDescUt.inf
+  AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/NBIO/IOD/FindLastPciePortOnPrevPcieCUt/FindLastPciePortOnPrevPcieCUt.inf
+  AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/NBIO/IOD/FindLastPciePortOfThisPcieCUt/FindLastPciePortOfThisPcieCUt.inf

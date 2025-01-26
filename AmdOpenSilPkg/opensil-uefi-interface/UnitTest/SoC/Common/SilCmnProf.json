@@ -52,7 +52,29 @@
   {
     "Component": "NBIO",
     "Description": "Profile for xUSL NBIO components",
-    "Tests" : []
+    "Tests" : [
+      {
+        "Name"       : "FindPcieCoreDescUt",
+        "ConfigFile" : "AmdOpenSilPkg\\opensil-uefi-interface\\UnitTest\\Source\\xUSL\\NBIO\\IOD\\FindPcieCoreDescUt\\FindPcieCoreDescUt.json",
+        "Iterations" : ["ValidFindPcieCoreDesc", "HideInfoThisPcieCoreIsNULL", "HideInfoNextPcieCoreIsNULL"],
+        "Target"     : "AmdOpenSilPkg\\opensil-uefi-interface\\OpenSIL\\xUSL\\NBIO\\IOD\\NbioHidePcieCore.c",
+        "Timeout"    : 15
+      },      
+      {
+        "Name"       : "FindLastPciePortOnPrevPcieCUt",
+        "ConfigFile" : "AmdOpenSilPkg\\opensil-uefi-interface\\UnitTest\\Source\\xUSL\\NBIO\\IOD\\FindLastPciePortOnPrevPcieCUt\\FindLastPciePortOnPrevPcieCUt.json",
+        "Iterations" : ["ValidFindLastPciePort"],
+        "Target"     : "AmdOpenSilPkg\\opensil-uefi-interface\\OpenSIL\\xUSL\\NBIO\\IOD\\NbioHidePcieCore.c",
+        "Timeout"    : 15
+      },
+      {
+        "Name"       : "FindLastPciePortOfThisPcieCUt",
+        "ConfigFile" : "AmdOpenSilPkg\\opensil-uefi-interface\\UnitTest\\Source\\xUSL\\NBIO\\IOD\\FindLastPciePortOfThisPcieCUt\\FindLastPciePortOfThisPcieCUt.json",
+        "Iterations" : ["FindLastPciePortOfThisPcieCore"],
+        "Target"     : "AmdOpenSilPkg\\opensil-uefi-interface\\OpenSIL\\xUSL\\NBIO\\IOD\\NbioHidePcieCore.c",
+        "Timeout"    : 15
+      }
+    ]
   },
   {
     "Component": "GFX",
