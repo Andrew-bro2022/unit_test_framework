@@ -73,6 +73,26 @@
         "Iterations" : ["FindLastPciePortOfThisPcieCore"],
         "Target"     : "AmdOpenSilPkg\\opensil-uefi-interface\\OpenSIL\\xUSL\\NBIO\\IOD\\NbioHidePcieCore.c",
         "Timeout"    : 15
+      },
+      
+      {
+        "Name"       : "PcieConfigAttachDescriptorsUt",
+        "ConfigFile" : "AmdOpenSilPkg\\opensil-uefi-interface\\UnitTest\\Source\\xUSL\\NBIO\\IOD\\PcieConfigAttachDescriptorsUt\\PcieConfigAttachDescriptorsUt.json",
+        "Iterations" : ["ValidDescriptorRemoved"],
+        "Target"     : "AmdOpenSilPkg\\opensil-uefi-interface\\OpenSIL\\xUSL\\NBIO\\IOD\\NbioHidePcieCore.c",
+        "Timeout"    : 15
+      },      {
+        "Name"       : "FindPrevPcieCoreUt",
+        "ConfigFile" : "AmdOpenSilPkg\\opensil-uefi-interface\\UnitTest\\Source\\xUSL\\NBIO\\IOD\\FindPrevPcieCoreUt\\FindPrevPcieCoreUt.json",
+        "Iterations" : ["InvalidInstanceID", "FindPrevSiliconAndLastWrapper", "TraverseMultipleSilicons", "PrevSiliconNotFound"],
+        "Target"     : "AmdOpenSilPkg\\opensil-uefi-interface\\OpenSIL\\xUSL\\NBIO\\IOD\\NbioHidePcieCore.c",
+        "Timeout"    : 15
+      },      {
+        "Name"       : "IsSteppingAxUt",
+        "ConfigFile" : "AmdOpenSilPkg\\opensil-uefi-interface\\UnitTest\\Source\\xUSL\\NBIO\\IOD\\IsSteppingAxUt\\IsSteppingAxUt.json",
+        "Iterations" : ["SilPass", "SilInvalidParameter"],
+        "Target"     : "AmdOpenSilPkg\\opensil-uefi-interface\\OpenSIL\\xUSL\\NBIO\\IOD\\NbioBaseInitGenoa.c",
+        "Timeout"    : 15
       }
     ]
   },

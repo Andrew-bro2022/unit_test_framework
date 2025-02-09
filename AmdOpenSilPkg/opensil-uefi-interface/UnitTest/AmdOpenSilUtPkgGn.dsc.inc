@@ -32,3 +32,7 @@
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/NBIO/IOD/FindPcieCoreDescUt/FindPcieCoreDescUt.inf
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/NBIO/IOD/FindLastPciePortOnPrevPcieCUt/FindLastPciePortOnPrevPcieCUt.inf
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/NBIO/IOD/FindLastPciePortOfThisPcieCUt/FindLastPciePortOfThisPcieCUt.inf
+
+  AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/NBIO/IOD/PcieConfigAttachDescriptorsUt/PcieConfigAttachDescriptorsUt.inf
+  AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/NBIO/IOD/FindPrevPcieCoreUt/FindPrevPcieCoreUt.inf
+  AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/NBIO/IOD/IsSteppingAxUt/IsSteppingAxUt.inf
