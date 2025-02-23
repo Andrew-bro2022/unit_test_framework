@@ -93,7 +93,23 @@
         "Iterations" : ["SilPass", "SilInvalidParameter"],
         "Target"     : "AmdOpenSilPkg\\opensil-uefi-interface\\OpenSIL\\xUSL\\NBIO\\IOD\\NbioBaseInitGenoa.c",
         "Timeout"    : 15
+      },
+      {
+        "Name"       : "PcieEnumerateAndHarvestWrUt",
+        "ConfigFile" : "AmdOpenSilPkg\\opensil-uefi-interface\\UnitTest\\Source\\xUSL\\NBIO\\IOD\\PcieEnumerateAndHarvestWrUt\\PcieEnumerateAndHarvestWrUt.json",
+        "Iterations" : ["TestAXStepping", "TestBXStepping"],
+        "Target"     : "AmdOpenSilPkg\\opensil-uefi-interface\\OpenSIL\\xUSL\\NBIO\\IOD\\NbioBaseInitGenoa.c",
+        "Timeout"    : 15
+      },
+      
+      {
+        "Name"       : "InitNbioConfigDataUt",
+        "ConfigFile" : "AmdOpenSilPkg\\opensil-uefi-interface\\UnitTest\\Source\\xUSL\\NBIO\\IOD\\InitNbioConfigDataUt\\InitNbioConfigDataUt.json",
+        "Iterations" : ["InitDataSuccess"],
+        "Target"     : "AmdOpenSilPkg\\opensil-uefi-interface\\OpenSIL\\xUSL\\NBIO\\IOD\\NbioData.c",
+        "Timeout"    : 15
       }
+
     ]
   },
   {

@@ -36,3 +36,6 @@
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/NBIO/IOD/PcieConfigAttachDescriptorsUt/PcieConfigAttachDescriptorsUt.inf
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/NBIO/IOD/FindPrevPcieCoreUt/FindPrevPcieCoreUt.inf
   AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/NBIO/IOD/IsSteppingAxUt/IsSteppingAxUt.inf
+
+  AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/NBIO/IOD/PcieEnumerateAndHarvestWrUt/PcieEnumerateAndHarvestWrUt.inf
+  AmdOpenSilPkg/opensil-uefi-interface/UnitTest/Source/xUSL/NBIO/IOD/InitNbioConfigDataUt/InitNbioConfigDataUt.inf
